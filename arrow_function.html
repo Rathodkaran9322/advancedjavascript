@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. Function without parameter
+        //--old style--
+        function hello(){
+            console.log("Hello Students");
+        }
+        hello(); //Function call
+
+        //--arrow function--
+        const helloArrow = () => {
+            console.log("Hello Students usign arrow");
+        };
+        helloArrow(); // Function call
+
+        //2. Function with  one parameter
+        //--old style--
+        function welcome(name){
+            console.log("Welcome"+ name);
+        }
+        welcome("Karan");
+        //--arrow function--
+        const welcomeArrow = name => 
+            console.log("Welcome"+ name + " using arrow - Welcome " + name);
+            welcomeArrow("Tejas");
+
+        //3.Function with Multiple Parameter
+        //--old style--
+        function add(a, b) {
+            console.log(a,b);
+        }
+        add(10,80);
+
+        //-- arrow function
+        const addArrow = (a, b) => {
+            console.log(a + b);
+        }
+        addArrow(50, 60);
+
+        //4. Function with return value
+        //--old style--
+        function addition(x,y){
+            return x + y;
+        }
+        let result1 = addition(10,20);
+        console.log(result1);
+        //-- arrow function
+        const additionArrow = (x,y) => {
+            return x + y;
+        }
+        let result2 = additionArrow(30,40);
+        console.log(result2);
+
+        const additionArrow1 = (x,y) => x + y;
+        let result3 = additionArrow1(50,60);
+        console.log(result3);
+
+        //5. Function returning a string
+        //--old style--
+        function sayHello(name){
+            return "Hello " + name;
+        }
+        console.log(sayHello("Karan"));
+
+        //-- arrow function
+        const sayHelloArrow = name => "Hello " + name;
+        console.log(sayHelloArrow("Tejas"));
+
+        //6. Arrow function with template literal
+        const fullname = (fname,lname) => `${fname} ${lname}`;
+        console.log(fullname("Karan", "rathod"));
+
+        //7. Multiple statements in Arrow Function
+        //--old style--
+        function calculate(a,b){
+            let sum = a+b;
+            let result = sum * 2;
+            return result;
+
+        }
+        console.log(calculate(10, 20));
+
+        const calculateArrow = (a,b) => {
+            let sum = a+b;
+            let result = sum * 2;
+            return result;
+        }
+        console.log(calculateArrow(30, 40));
+
+        //8.arrow function returing object
+
+        const getstudents = () =>({
+            name:"karan",
+            address :"jalna",
+            position:"student",
+
+        });
+        console.log(getstudents());
+
+    </script>
+</body>
+</html>

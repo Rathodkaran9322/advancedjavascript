@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(num1,num2){
+            document.write(num1 + num2 , "<br>")
+        }   
+        sum(10,20);
+        sum(30,40);
+         </script> 
+         <script>
+            function add(...numbers){
+                let sum = 0;
+                for( let i in numbers){
+                    sum += numbers[i];
+                }
+                document.write(sum + "<br>");
+            }
+            add(12, 56, 67, 68);
+            add(12, 56, 67, 68, 5, 8, 9);
+         </script>
+
+         <script>
+            function sumRest(name,course,address,...args){
+                document.write(`Hello ${name}<br>`);
+
+                let sum = 0;
+                for (let i in args){
+                    sum += args[i];
+                }
+                document.write("Total Marks "+sum + "<br>");
+            }
+            sumRest("Karan","A","B", 10, 20, 30);
+            sumRest("vaibhav","B","C", 10, 20, 30, 40, 50);
+         </script>
+
+         <script>
+            function studentsInfo(name, address, ...subjects) {
+              document.write(`Student name : ${name}<br>`);
+              document.write(`Subjects : ${subjects}<br>`);
+            }
+            studentsInfo("Karan", "Pune", "JavaScript", "MySQL", "HTML", "CSS");
+            studentsInfo("vaibhav", "jalna", "JavaScript", "REACT", "JAVA", "CSS");
+        </script>
+
+         <script>
+           function showSum(name, ...numbers) {
+        let total = 0;
+
+        for (let num of numbers) {
+            total += num;
+        }
+        console.log(`Hello, ${name}`);
+        console.log(`You Entered ${numbers.length} numbers : ${numbers.join(", ")}`);
+        console.log(`Total Sum : ${total}`);
+    }
+    showSum("Karan", 10, 20, 30, 40, 50);
+    showsum("vaibhav,20,30,50,60,30"); 
+    //rest operators a function any number of arguments and coll
+</script>
+</body>
+</html>
+
+    
