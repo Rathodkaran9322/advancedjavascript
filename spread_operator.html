@@ -38,8 +38,22 @@
         document.write(obj3);
         document.write(JSON.stringify(obj3));
         document.write(`<pre>${JSON.stringify(obj3, null, 4)}</pre>`);
+    </script>
 
-        
+    <script>
+        function sunRest(name,...args){ //rest operator used in declaring
+            document.write(`Hello ${name} :`);
+            let sum = 0;
+            for(let i in args){
+                sum += args[i];
+            }
+            document.write(sum + "<br>");
+        }
+        var arr4 = [10,20,30,40,50];
+        sunRest("Karan",...arr4); //while function spread operator
+
+        //The Spread operator (...) its allow us to expand or unpack the elements of and array or properties of an object into insivisual values
+
     </script>
 </body>
 </html>
