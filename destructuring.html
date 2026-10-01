@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object Destructuring - Old way
+        const person = {
+            name :`Karan`,
+            age : 22,
+            gender : `Male`,
+        };
+        document.write(" Name : " + "Age : " + person.age + " Gender : " + person.gender,);
+        let name = person.name;
+        let age = person.age;
+        let gender = person.gender;
+        
+        console.log(name);
+        console.log(age);
+        console.log(gender);
+    </script>
+
+    <script>
+        //Object Destructuring - es6 way
+        const person1 = {
+            name :`Khagesh`,
+            age : 22,
+            gender : `Male`,
+        };
+        const { name1, age2, gender3 } = person1;
+        console.log(name);
+        console.log(age);
+        console.log(gender);
+        document.write(
+            " Name : " + name + " Age : " + age + " Gender : " + gender,
+        )
+
+    </script>
+
+    //Destructuring in function parameterss
+    <script>
+        function showInfo({ name, age, city }) {
+            document.write(`Name : ${name} , Age : ${age} , City : ${city}`);
+        }
+        const person2 = {
+            name: "Khagesh",
+            age: 22,
+            city: "Pune"
+        };
+        showInfo(person2);
+    </script>
+
+    <script>
+        //Nested Object Destructuring
+        const student = {
+            uname :"Aanand",
+            marks :{maths :90, science: 87}
+        }
+        const {uname , marks : {maths, science}} = student;
+
+        document.write(`Username : ${uname} , Maths : ${maths} , Science : ${science}`);
+    </script>
+
+    <script>
+        const arrvalues = [`one`,`two`,`three`];
+
+        const[x,y,z] = arrvalues;
+        console.log(x);
+        console.log(y);
+        console.log(z);
+    </script>
+
+    <script>
+        //swap variables esily
+        let a = 5, b = 10;
+        [a,b] = [b,a];
+
+        document.write(`a : ${a} ,b : ${b}`);
+    </script>
+
+    <script>
+         const numbers = [10, 20, 30, 40, 50];
+        const [first, second, ...rest] = numbers;
+        
+        console.log(first);
+        console.log(second);
+        console.log(rest);
+    </script>
+</body>
+</html>
