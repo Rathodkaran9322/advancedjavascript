@@ -36,5 +36,53 @@
         let student2 = new student();
         student2.display("vaibhav","IT");
     </script>
+    <script>
+    //constructor method
+    class student3{
+        constructor(){
+        constructor.write("hello constructor call directly" + "<br>");
+    }
+    
+    }
+    let s1 = new student();
+    </script>
+    <script>
+        //A constructor is a special method inside a class that is automatically called when we create object
+        class person{
+            constructor(name,age){ //constructor method
+                this.p_name = name; //assign value to the objects peropery
+                this.p_age = age; //refers to the current object being created
+                this.display(); //method called inside the constructor
+            }
+            display(){
+                document.write(`name : ${this.p_name}, age : ${this.p_name},age : ${this.p_age}`);
+            }
+        }
+        const p1 = new person("karan",22);
+        const p2 = new person("khagesh",22);
+        //p1.display();
+        //p2.display();
+    </script>
+
+    <script>
+    class student4 {
+        constructor(name, course) {
+            this.name = name;
+            this.course = course;
+        }
+
+        display() {
+            console.log(`Name : ${this.name}`);
+            console.log(`Course : ${this.course}`);
+        }
+    }
+    let student_5 = new student4("Khagesh", "IT");
+    student_5.display();
+
+    //calling ststic method using classname - classname,stasticmethod name
+    //static method belongs only to the class
+    
+</script>
+        
 </body>
 </html>

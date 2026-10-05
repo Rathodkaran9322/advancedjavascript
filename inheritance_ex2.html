@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+
+<script>
+    // parent class
+    class person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        showinfo() {
+            document.write(
+                `<h1>Person Info :</h1>
+                Name : ${this.name} <br>
+                Age : ${this.age} <br><br>`
+            );
+        }
+    }
+
+    // child class
+    class student extends person {
+        constructor(name, age, rollno) {
+            super(name, age);
+            this.rollno = rollno;
+        }
+
+        showstudent() {
+            document.write(
+                `<h1>Student Info :</h1>
+                Name : ${this.name} <br>
+                Age : ${this.age} <br>
+                Roll No : ${this.rollno} <br><br>`
+            );
+        }
+    }
+
+    // employee class
+    class employee extends person {
+        constructor(name, age, salary) {
+            super(name, age);
+            this.salary = salary;
+        }
+
+        showemployee() {
+            document.write(
+                `<h1>Employee Info :</h1>
+                Name : ${this.name} <br>
+                Age : ${this.age} <br>
+                Salary : ${this.salary} <br><br>`
+            );
+        }
+    }
+
+    // Student object
+    let student1 = new student("Karan", 22, 101);
+    student1.showstudent();
+
+    // Employee object
+    let employee1 = new employee("Khagesh", 25, 50000);
+    employee1.showemployee();
+
+    class graduatestudent extends student{
+        constructor(name,age,rollno,degree){
+            super(name,age,rollno);
+            this.degree = degree;
+        }
+        showGraduate(){
+            document.write(`degree - $(this.degree)`);
+        }
+    }
+    const g1 = new graduatestudent("vaibhav",21,1005,"BCA");
+    g1.showstudent(); //from student
+    g1.showGraduate(); //from graduatestudent
+    g1.show(); //from person
+</script>
+</body>
+</html>
