@@ -3,68 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inheritance</title>
+    <title>Inheritance Example</title>
 </head>
 <body>
-
-<script>
-    // parent class
-    class person {
-        constructor(name, age) {
-            this.name = name;
-            this.age = age;
+    <script>
+        // Parent class (Person)
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
         }
 
-        showinfo() {
-            document.write(
-                `<h1>Person Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br><br>`
-            );
-        }
-    }
+        // Child class
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+                this.rollNo = rollNo;
+            }
 
-    // child class
-    class student extends person {
-        constructor(name, age, rollno) {
-            super(name, age);
-            this.rollno = rollno;
+            showStudent() {
+                document.write(
+                    `<h1>Student Info :</h1> Name : ${this.name} <br> Age : ${this.age} <br> , Roll no : ${this.rollNo}`
+                );
+            }
         }
 
-        showstudent() {
-            document.write(
-                `<h1>Student Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br>
-                Roll No : ${this.rollno} <br><br>`
-            );
-        }
-    }
+        // Creating instances/objects
+        const s1 = new Student("Karan", 22, 1001);
+        s1.showStudent();
 
-    // employee class
-    class employee extends person {
-        constructor(name, age, salary) {
-            super(name, age);
-            this.salary = salary;
-        }
-
-        showemployee() {
-            document.write(
-                `<h1>Employee Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br>
-                Salary : ${this.salary} <br><br>`
-            );
-        }
-    }
-
-    // Student object
-    let student1 = new student("Karan", 22, 101);
-    student1.showstudent();
-
-    // Employee object
-    let employee1 = new employee("Khagesh", 25, 50000);
-    employee1.showemployee();
-</script>
+        const s2 = new Student("Neha", 22, 1002);
+        s2.showStudent();
+    </script>
 </body>
 </html>

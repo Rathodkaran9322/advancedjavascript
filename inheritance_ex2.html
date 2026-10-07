@@ -3,82 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inheritance</title>
+    <title>Document</title>
 </head>
 <body>
+    <script>
+        // Parent class (Person)
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
 
-<script>
-    // parent class
-    class person {
-        constructor(name, age) {
-            this.name = name;
-            this.age = age;
+            showInfo() {
+                document.write(`<br> Name : ${this.name}, Age : ${this.age}`);
+            }
         }
 
-        showinfo() {
-            document.write(
-                `<h1>Person Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br><br>`
-            );
-        }
-    }
+        // Child class
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+                this.rollNo = rollNo;
+            }
 
-    // child class
-    class student extends person {
-        constructor(name, age, rollno) {
-            super(name, age);
-            this.rollno = rollno;
+            showStudent() {
+                document.write(
+                    `<h1>Student Info :</h1> Name : ${this.name} <br> Age : ${this.age} <br> , Roll no : ${this.rollNo}`
+                );
+            }
         }
 
-        showstudent() {
-            document.write(
-                `<h1>Student Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br>
-                Roll No : ${this.rollno} <br><br>`
-            );
-        }
-    }
+        // Grandchild class (Image madhun add kelela code)
+        class GraduateStudnet extends Student {
+            constructor(name, age, rollNo, degree) {
+                super(name, age, rollNo);
+                this.degree = degree;
+            }
 
-    // employee class
-    class employee extends person {
-        constructor(name, age, salary) {
-            super(name, age);
-            this.salary = salary;
+            showGraduate() {
+                document.write(`<br> Degree - ${this.degree}`);
+            }
         }
 
-        showemployee() {
-            document.write(
-                `<h1>Employee Info :</h1>
-                Name : ${this.name} <br>
-                Age : ${this.age} <br>
-                Salary : ${this.salary} <br><br>`
-            );
-        }
-    }
-
-    // Student object
-    let student1 = new student("Karan", 22, 101);
-    student1.showstudent();
-
-    // Employee object
-    let employee1 = new employee("Khagesh", 25, 50000);
-    employee1.showemployee();
-
-    class graduatestudent extends student{
-        constructor(name,age,rollno,degree){
-            super(name,age,rollno);
-            this.degree = degree;
-        }
-        showGraduate(){
-            document.write(`degree - $(this.degree)`);
-        }
-    }
-    const g1 = new graduatestudent("vaibhav",21,1005,"BCA");
-    g1.showstudent(); //from student
-    g1.showGraduate(); //from graduatestudent
-    g1.show(); //from person
-</script>
+        // Object creation & method calls
+        const g1 = new GraduateStudnet("Vaibhav", 21, 1003, "BCS");
+        g1.showStudent(); //from student
+        g1.showGraduate(); //from graduatestudnet
+        g1.showInfo(); //from person
+    </script>
 </body>
 </html>
