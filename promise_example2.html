@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // student data promise
+
+    function getStudentData() {
+        // create a new promise
+        return new Promise((resolve, reject) => {
+            // API call using setTimeout()
+            setTimeout(() => {
+                // student Api successful
+                resolve("Student data received successfully");
+
+            }, 2000);
+
+        });
+    }
+    function getCourseData() {
+        // create a new promise
+        return new Promise((resolve, reject) => {
+            // API call using setTimeout()
+            setTimeout(() => {
+                // student Api successful
+                resolve("Course data received successfully");
+
+            }, 2000);
+
+        });
+    }
+    function getAttendanceData() {
+        // create a new promise
+        return new Promise((resolve, reject) => {
+            // API call using setTimeout()
+            setTimeout(() => {
+                // student Api successful
+                resolve("Attendance data received successfully");
+
+            }, 2000);
+
+        });
+    }
+    Promise.all([getStudentData(),getCourseData(),getAttendanceData()])
+    .then((result) => {
+        console.log("All data Received successfully");
+        console.log(result);
+    })
+    .catch((error) =>{
+        console.log("Somthing went wrong");
+        console.log(error);
+    });
+</script>
+</body>
+</html>
