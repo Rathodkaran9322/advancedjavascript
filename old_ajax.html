@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Load Local Data</title> 
+</head> 
+<body> 
+ 
+    <button onclick="loadText()">Load Text File</button> 
+    <button onclick="loadJson()">Load Json File</button> 
+ 
+    <div id="ajaxdata"></div> 
+ 
+    <script> 
+ 
+        function loadText(){ 
+ 
+            var xhr = new XMLHttpRequest();//create new ajax request object 
+ 
+            xhr.open("GET", "file.txt", true); 
+ 
+            //"GET" - Type of Request 
+            //file.txt = file to load 
+            //true = make the request asynchronous (non-blocking) 
+ 
+            xhr.onload = function(){ 
+ 
+                if(xhr.status === 200){ 
+ 
+                    document.getElementById("ajaxdata").textContent = xhr.responseText; 
+ 
+                }else{ 
+ 
+                    document.getElementById("ajaxdata").textContent = "Error loading text file"; 
+ 
+                } 
+ 
+            }; 
+ 
+            xhr.onerror = function(){ 
+ 
+                document.getElementById("ajaxdata").textContent = "Request failed"; 
+ 
+            }; 
+ 
+            xhr.send(); 
+ 
+        } 
+ 
+ 
+        function loadJson(){ 
+ 
+            var xhr = new XMLHttpRequest(); 
+ 
+            xhr.open("GET", "data.json", true); 
+ 
+            xhr.onload = function(){ 
+ 
+                if(xhr.status === 200){ 
+ 
+                    try { 
+                        var data = JSON.parse(xhr.responseText); 
+ 
+                        document.getElementById("ajaxdata").textContent = 
+                            JSON.stringify(data, null, 4); 
+ 
+                    } catch(error) { 
+                        document.getElementById("ajaxdata").textContent = "Invalid JSON format"; 
+                    } 
+ 
+                }else{ 
+ 
+                    document.getElementById("ajaxdata").textContent = 
+                        "Error loading JSON file. Status: " + xhr.status; 
+ 
+                } 
+ 
+            }; 
+ 
+            xhr.onerror = function(){ 
+ 
+                document.getElementById("ajaxdata").textContent = 
+                    "Request failed"; 
+ 
+            }; 
+ 
+            xhr.send(); 
+ 
+        } 
+ 
+    </script> 
+ 
+</body> 
+</html>
