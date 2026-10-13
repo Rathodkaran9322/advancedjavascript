@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Fetch JSON Data Example</h2>
+    <div id="output">Ckck Button to load Json Data</div>
+    <button onclick="loadData()">Load JSON Data</button>
+
+    <script>
+        function loadData(){
+            fetch("data2.json")
+            .then(response => {
+                document.write("HTTP status Code: " + response.status + "<br>");
+                if(!response.ok){
+                    throw new Error("Error loading file")
+                }
+                return response.json();
+            })
+            .then(data => {
+                let table = `
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
+                            <th>Skills</th>
+                        </tr>
+                    </thead>
+                `
+                data.forEach(person =>{
+                    table += `
+                    <tbody>
+                        <tr>
+                            <td>${person.name}</td>
+                            <td>${person.age}</td>
+                            <td>${person.city}</td>
+                            <td>${person.skills.join(", ")}</td>
+                        </tr>
+                    </tbody>
+                    `
+                });
+                table += `</table>`;
+                document.body.innerHTML = table;
+            })
+            .catch((error) => {
+                document.write("Error" + error.message);
+            });
+        }
+    </script>
+</body>
+</html>

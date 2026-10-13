@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h2>Search Users</h2>
+    <input type="text" id="search" placeholder="Enter user name" />
+    <button onclick="searchUsers()">Search</button>
+
+    <ul id="result"></ul>
+    <script>
+        async function searchUsers() {
+            let searchText = document
+                .getElementById("search")
+                .value.trim()
+                .toLowerCase();
+
+            let output = document.getElementById("result");
+
+            output.innerHTML = "";
+
+            if (!searchText) {
+                output.textContent = "Please Enter Name";
+                return;
+            }
+
+            try {
+                let response = await fetch("data2.json");
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch Users");
+                }
+
+                let users = await response.json();
+
+                let filteredUsers = users.filter(user =>
+                    user.name.toLowerCase().includes(searchText)
+                );
+
+                if (filteredUsers.length === 0) {
+                    output.textContent = "No users Found";
+                    return;
+                }
+
+                filteredUsers.forEach(user => {
+                    output.innerHTML += `<li>${user.name}</li>`;
+                });
+            } catch (error) {
+                output.textContent = "Error :" + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

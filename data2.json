@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Vaibhav",
+        "age": 22,
+        "city": "Pune",
+        "skills": ["JAVA", "REACT", "Advance JS", "Python"]
+    },
+    {
+        "name": "Karan",
+        "age": 22,
+        "city": "Pune",
+        "skills": ["JAVA", "REACT", "Advance JS", "Python"]
+    },
+    {
+        "name": "Khagesh",
+        "age": 23,
+        "city": "Pune",
+        "skills": ["JAVA", "REACT", "Advance JS", "Python"]
+    },
+    {
+        "name": "Pratik",
+        "age": 24,
+        "city": "Mumbai",
+        "skills": ["HTML", "CSS", "JavaScript", "PHP"]
+    },
+    {
+        "name": "Jivan",
+        "age": 25,
+        "city": "Nashik",
+        "skills": ["JAVA", "REACT", "Python", "MySQL"]
+    }
+]
