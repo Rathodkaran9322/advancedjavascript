@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Method</title>
+</head>
+<body>
+<h2>JavaScript Map Method</h2>
+
+<script>
+    //1.map
+    //defination
+    let numbers = [10, 20, 30, 40];
+
+    let result = numbers.map(function (num) {
+        return num * 2;
+    });
+
+    document.write(result + "<br>");
+</script>
+
+<script>
+    //convert names to uppercase
+    let names = ["karan", "pratik", "vaibhav", "suraj", "ajinkya"];
+
+    let result2 = names.map((name) => name.toUpperCase());
+
+    document.write(result2);
+</script>
+
+<script>
+    //calculates prices with 18% GST
+    let prices = [100,200,300];
+
+    let finalprice = prices.map(price =>  1.18);
+
+    console.log(finalprice);
+</script>
+
+<script>
+    //extract student name
+
+    let student = [
+        {name:"karan",marks:90},
+        {name:"vaibhav",marks:80},
+        {name:"pratik",marks:10},
+        {name:"vishal",marks:50},
+        {name:"ajinkya",marks:95},
+    ];
+    let server = student.map(student => student.name);
+    console.log(server);
+</script>
+
+
+<script>
+    //2.filter
+
+    let numbers2 = [10,15,20,22,45,48,76,98,99];
+
+    let result3 = numbers2.filter((num) => num % 2 === 0);
+    console.log(result);
+</script>
+
+<script>
+    let marks = [35,80,25,78,41,76,21,65];
+    let passed = marks.filter(mark => mark > 40);
+    console.log(passed);
+</script>
+
+<script>
+    let price2 = [500,300,1000,800,150,1200,1400,900];
+    let result4 = price2.filter(price => price >= 1000);
+    console.log(result);
+</script>
+
+<script>
+    let employees = [
+        {name:"sachin", active: true},
+        {name:"praksh", active: true},
+        {name:"amol", active: false},
+        {name:"atul", active: true},
+        {name:"pratik", active: false},
+    ];
+    let result5 = employees.filter((emp) => emp .active);
+    console.log(result);
+</script>
+
+<script>
+    //3.foreach() - perform an action for every elemnet
+    //defination : the forEach()
+    //method exectues callback function for each elements of an array , but it doesnot return a new array
+
+    let name2 = ["vishal","suraj","aniket","ganesh"];
+
+    name2.foreach(function( name){
+        console.log(name);
+    });
+</script>
+
+<script>
+    let numbers6 = [2,3,4,5];
+    numbers6.forEach((num) => {
+        console.log 
+        console.log
+    });
+</script>
+
+<script>
+    //4.reduce() - converts an arry into  a single results
+
+    //definatio :the reduce() method is processes array elements andaccumlates them into a single results,such as number,strings,object or another array
+
+    //syntax
+    //array.reduce(accumalor,cuurentvalue) => {
+    //return updated accumaalor
+    //},intialvalue);
+    //accumaltor : store the accumalted results
+    //currentvalue : the curretn array element
+
+    
+    let numbers7 = [10,20,30,50,80];
+    let total = numbers7.reduce((sum,num) => {
+        return sum + num;
+    }, 0);
+    
+</script>
+
+<script>
+    let numbers8 = [25,67,78,23,67];
+    let maximum = numbers8.reduce((max,num) =>{
+        return num > max 
+    })
+</script>
+
+<script>
+    //5.find()
+
+    //find() returns the first elements that satisfies the given condition
+
+    let numbers9 = [10,20,30,40,50];
+    let result9 = numbers9.find(function(num){
+        return num > 25;
+    });
+    console.log(result9);
+</script>
+</body>
+</html>
