@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Change Color of All headings using Class Selector</h1>
+
+    <h2 class="heading">HTML - to create website Structure</h2>
+    <h2 class="heading">CSS - to created styling and designing purpose</h2>
+    <h2 class="heading">Bootstrap - CSS readymade with Responsive Design</h2>
+    <h2 class="heading">JS - Events and Functionality on Website</h2>
+
+    <p class="heading">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam itaque
+        quidem maiores consectetur. Impedit necessitatibus sapiente eius odio.
+        Deserunt, veritatis officia. Eius nulla nostrum excepturi adipisci magnam,
+        praesentium asperiores rem?
+    </p>
+
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        function changeColor() {
+            let headings = document.getElementsByTagName("h2");
+            for (let i = 0; i < headings.length; i++) {
+                headings[i].style.backgroundColor = "blue";
+                headings[i].style.color = "white";
+                headings[i].style.padding = "20px";
+            }
+
+            let headingss = document.getElementsByTagName("p");
+            for (let i = 0; i < headingss.length; i++) {
+                headingss[i].style.backgroundColor = "red";
+                headingss[i].style.color = "white";
+                headingss[i].style.padding = "20px";
+            }
+        }
+    </script>
+</body>
+</html>
